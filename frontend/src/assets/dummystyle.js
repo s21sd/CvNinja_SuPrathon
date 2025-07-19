@@ -29,8 +29,8 @@ export const landingPageStyles = {
   heroLeft: "flex flex-col gap-6 text-center md:text-left",
   tagline: "text-sm uppercase tracking-wide text-amber-600 font-semibold",
   heading: "text-4xl md:text-5xl font-extrabold leading-tight",
-  headingText: "text-gray-800",
-  headingGradient: "bg-gradient-to-r from-teal-600 to-amber-500 bg-clip-text text-transparent",
+  headingText: "text-gray-800 text-xl sm:text-6xl",
+  headingGradient: "bg-gradient-to-r from-teal-600 to-amber-500 bg-clip-text text-transparent text-xl sm:text-5xl",
 
   description: "text-gray-600 text-lg max-w-xl mx-auto md:mx-0",
   ctaButtons: "flex gap-4 mt-6 flex-wrap justify-center md:justify-start",
