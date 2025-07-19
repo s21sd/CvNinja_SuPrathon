@@ -2,14 +2,14 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
 import RenderResume from "../components/RenderResume";
-
+import { API_PATHS } from '../utils/apiPaths';
 export default function PublicResume() {
     const { id } = useParams();
     const [resume, setResume] = useState(null);
 
     useEffect(() => {
         axiosInstance
-            .get(`/public/${id}`)
+            .get(API_PATHS.RESUME.GET_PUBLIC(id))
             .then((res) => setResume(res.data))
             .catch(() => setResume(null));
     }, [id]);
