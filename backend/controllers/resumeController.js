@@ -110,6 +110,7 @@ export const getResumeByIdWithPublicAccess = async (req, res) => {
     try {
         console.log("Getting resume for ID:", req.params.id);
         const resume = await Resume.findById(req.params.id);
+        console.log("Found resume:", resume);
         if (!resume) return res.status(404).json({ message: "Resume not found" });
 
         res.json(resume);
