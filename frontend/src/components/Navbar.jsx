@@ -15,7 +15,7 @@ const Navbar = () => {
             </div>
 
             <span className="text-xl sm:text-2xl font-black bg-gradient-to-r from-teal-600 to-amber-500 bg-clip-text text-transparent">
-              ResumeBuilder
+              CvNinja
             </span>
           </div>
         </Link>

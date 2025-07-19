@@ -49,7 +49,7 @@ const Login = ({ setCurrentPage }) => {
           value={email}
           onChange={({ target }) => setEmail(target.value)}
           label="Email Address"
-          placeholder="resumebuilder@gmail.com"
+          placeholder="CvNinja@gmail.com"
           type="email"
         />
         <Input
