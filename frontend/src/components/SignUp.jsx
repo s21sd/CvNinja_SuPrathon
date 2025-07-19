@@ -59,7 +59,7 @@ const SignUp = ({ setCurrentPage }) => {
           value={fullName}
           onChange={({ target }) => setFullName(target.value)}
           label="Full Name"
-          placeholder="John Doe"
+          placeholder="Cv Ninja"
           type="text"
         />
         <Input

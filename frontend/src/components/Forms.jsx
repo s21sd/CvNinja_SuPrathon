@@ -307,7 +307,7 @@ export const ProfileInfoForm = ({ profileData, updateSection }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Input
             label="Full Name"
-            placeholder="John Doe"
+            placeholder="Cv Ninja"
             value={profileData.fullName || ""}
             onChange={({ target }) => updateSection("fullName", target.value)}
           />

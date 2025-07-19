@@ -46,7 +46,7 @@ const CreateResumeForm = () => {
           value={title}
           onChange={({ target }) => setTitle(target.value)}
           label="Resume Title"
-          placeholder="e.g., John Doe - Software Engineer"
+          placeholder="e.g., Cv Ninja - Software Engineer"
           type="text"
         />
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
@@ -54,7 +54,7 @@ const CreateResumeForm = () => {
         <button
           type="submit"
           className="w-full py-3 bg-gradient-to-r from-teal-500 to-amber-600 text-white font-black rounded-2xl hover:scale-105 hover:shadow-xl hover:shadow-amber-200 transition-all"
->          Create Resume
+        >          Create Resume
         </button>
       </form>
     </div>
