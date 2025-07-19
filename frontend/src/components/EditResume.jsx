@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { ArrowLeft, AlertCircle, Download, Palette, Save, Trash2, Check, Loader2 } from "lucide-react"
+import { ArrowLeft, AlertCircle, Download, Palette, Save, Trash2, Check, Loader2, Share2 } from "lucide-react"
 import toast from "react-hot-toast"
 import DashboardLayout from "../components/DashboardLayout"
 import { TitleInput } from "../components/Inputs"
@@ -605,11 +605,11 @@ const EditResume = () => {
       toast.error("Failed to generate PDF. Please try again.");
       return;
     }
-  
+
     setIsDownloading(true);
     setDownloadSuccess(false);
     const toastId = toast.loading("Generating PDF…");
-  
+
     const override = document.createElement("style");
     override.id = "__pdf_color_override__";
     override.textContent = `
@@ -620,24 +620,24 @@ const EditResume = () => {
       }
     `;
     document.head.appendChild(override);
-  
+
     try {
       await html2pdf()
         .set({
-          margin:       0,
-          filename:     `${resumeData.title.replace(/[^a-z0-9]/gi, "_")}.pdf`,
-          image:        { type: "png", quality: 1.0 },
-          html2canvas:  {
-            scale:           2,
-            useCORS:         true,
+          margin: 0,
+          filename: `${resumeData.title.replace(/[^a-z0-9]/gi, "_")}.pdf`,
+          image: { type: "png", quality: 1.0 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
             backgroundColor: "#FFFFFF",
-            logging:         false,
-            windowWidth:     element.scrollWidth,
+            logging: false,
+            windowWidth: element.scrollWidth,
           },
-          jsPDF:        {
-            unit:       "mm",
-            format:     "a4",
-            orientation:"portrait",
+          jsPDF: {
+            unit: "mm",
+            format: "a4",
+            orientation: "portrait",
           },
           pagebreak: {
             mode: ['avoid-all', 'css', 'legacy']
@@ -645,15 +645,15 @@ const EditResume = () => {
         })
         .from(element)
         .save();
-  
+
       toast.success("PDF downloaded successfully!", { id: toastId });
       setDownloadSuccess(true);
       setTimeout(() => setDownloadSuccess(false), 3000);
-  
+
     } catch (err) {
       console.error("PDF error:", err);
       toast.error(`Failed to generate PDF: ${err.message}`, { id: toastId });
-  
+
     } finally {
       document.getElementById("__pdf_color_override__")?.remove();
       setIsDownloading(false);
@@ -689,7 +689,19 @@ const EditResume = () => {
               }))
             }
           />
+
           <div className="flex flex-wrap items-center gap-3">
+            <button
+              className={buttonStyles.share}
+              onClick={() => {
+                const shareURL = `${window.location.origin}/r/${resumeId}`;
+                navigator.clipboard.writeText(shareURL);
+                toast.success("Shareable URL copied to clipboard!");
+              }}
+            >
+              <Share2 size={16} />
+              <span className="text-sm">Share</span>
+            </button>
             <button
               className={buttonStyles.theme}
               onClick={() => setOpenThemeSelector(true)}
@@ -822,12 +834,12 @@ const EditResume = () => {
               className="a4-wrapper"
             >
               <div className="w-full h-full">
-              <RenderResume
-                key={`pdf-${resumeData?.template?.theme}`}
-                templateId={resumeData?.template?.theme || ""}
-                resumeData={resumeData}
-                containerWidth={null}
-              />
+                <RenderResume
+                  key={`pdf-${resumeData?.template?.theme}`}
+                  templateId={resumeData?.template?.theme || ""}
+                  resumeData={resumeData}
+                  containerWidth={null}
+                />
               </div>
             </div>
           </div>

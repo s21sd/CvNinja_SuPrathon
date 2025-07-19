@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp"
 import Dashboard from "./pages/Dashboard"
 import EditResume from "./components/EditResume"
 import UserProvider from './context/userContext';
+import PublicResume from './components/ResumePublic';
 const App = () => {
   return (
     <UserProvider>
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/r/:id" element={<PublicResume />} />
           <Route path="/resume/:resumeId" element={<EditResume />} />
         </Routes>
       </div>

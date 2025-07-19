@@ -409,6 +409,7 @@ export const containerStyles = {
 };
 
 export const buttonStyles = {
+  share: "flex items-center gap-2 px-3 sm:px-4 py-2 bg-blue-300 text-white font-bold rounded-xl hover:scale-105 transition-all",
   theme: "flex items-center gap-2 px-3 sm:px-4 py-2 bg-amber-100 text-amber-700 font-bold rounded-xl hover:bg-amber-200 transition-all",
   delete: "flex items-center gap-2 px-3 sm:px-4 py-2 bg-red-100 text-red-700 font-bold rounded-xl hover:bg-red-200 transition-all",
   download: "flex items-center gap-2 px-3 sm:px-4 py-2 bg-lime-100 text-lime-700 font-bold rounded-xl hover:bg-lime-200 transition-all",
