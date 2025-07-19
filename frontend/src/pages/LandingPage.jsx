@@ -7,6 +7,7 @@ import Modal from "../components/Modal";
 import { UserContext } from "../context/userContext";
 import { ProfileInfoCard } from "../components/Cards";
 import { landingPageStyles } from "../assets/dummystyle";
+import logo from "../../public/cvninja.png";
 
 const LandingPage = () => {
   const { user } = useContext(UserContext);
@@ -35,7 +36,7 @@ const LandingPage = () => {
         <div className={landingPageStyles.headerContainer}>
           <div className={landingPageStyles.logoContainer}>
             <div className={landingPageStyles.logoIcon}>
-              <LayoutTemplate className={landingPageStyles.logoIconInner} />
+              <img src={logo} alt="CvNinja Logo" className="w-16 h-10 rounded-full" />
             </div>
             <span className={landingPageStyles.logoText}>
               CvNinja

@@ -1,7 +1,7 @@
 export const landingPageStyles = {
   container: "min-h-screen bg-white text-gray-800",
-  header: "sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-amber-100/50 py-3 px-4 md:px-0",
-  headerContainer: "max-w-6xl mx-auto flex items-center justify-between gap-5",
+  header: "sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-amber-100/50 py-3 px-4 md:px-8",
+  headerContainer: "max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap",
 
   logoContainer: "flex items-center gap-3",
   logoIcon: "w-10 h-10 bg-gradient-to-br from-teal-600 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-200",
@@ -15,7 +15,7 @@ export const landingPageStyles = {
   desktopAuthButtonOverlay: "absolute inset-0 bg-gradient-to-br from-teal-600 to-amber-500 opacity-10",
   desktopAuthButtonText: "relative z-10",
 
-  mobileMenu: "md:hidden absolute top-16 left-0 w-full bg-white shadow-md z-40",
+  mobileMenu: "md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40",
   mobileMenuContainer: "p-4 flex flex-col gap-4",
   mobileUserInfo: "flex flex-col gap-2",
   mobileUserWelcome: "text-gray-700 font-medium",
@@ -24,16 +24,16 @@ export const landingPageStyles = {
 
   main: "w-full",
   heamberction: "pt-20 pb-32 bg-gray-50",
-  heroGrid: "max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-10",
+  heroGrid: "max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-10",
 
-  heroLeft: "flex flex-col gap-6",
+  heroLeft: "flex flex-col gap-6 text-center md:text-left",
   tagline: "text-sm uppercase tracking-wide text-amber-600 font-semibold",
   heading: "text-4xl md:text-5xl font-extrabold leading-tight",
   headingText: "text-gray-800",
   headingGradient: "bg-gradient-to-r from-teal-600 to-amber-500 bg-clip-text text-transparent",
 
-  description: "text-gray-600 text-lg max-w-lg",
-  ctaButtons: "flex gap-4 mt-6 flex-wrap",
+  description: "text-gray-600 text-lg max-w-xl mx-auto md:mx-0",
+  ctaButtons: "flex gap-4 mt-6 flex-wrap justify-center md:justify-start",
 
   primaryButton: "relative z-10 px-6 py-3 font-semibold text-white bg-gradient-to-br from-teal-600 to-amber-500 rounded-xl shadow-lg hover:shadow-xl transition-all",
   primaryButtonOverlay: "absolute inset-0 bg-gradient-to-br from-teal-600 to-amber-500 rounded-xl opacity-80 blur-sm",
@@ -69,7 +69,7 @@ export const landingPageStyles = {
   featuresTitleGradient: "bg-gradient-to-r from-teal-600 to-amber-500 bg-clip-text text-transparent",
   featuresDescription: "text-gray-600 max-w-xl mx-auto mt-3",
 
-  featuresGrid: "grid grid-cols-1 md:grid-cols-3 gap-8",
+  featuresGrid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
   featureCard: "relative group rounded-2xl overflow-hidden transition-all",
   featureCardHover: "absolute inset-0 bg-gradient-to-br from-teal-100 to-amber-100 opacity-0 group-hover:opacity-10 transition-all",
   featureCardContent: "relative z-10 p-6 rounded-2xl border shadow-sm",
