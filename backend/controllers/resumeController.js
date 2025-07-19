@@ -107,15 +107,18 @@ export const getResumeById = async (req, res) => {
 };
 
 export const getResumeByIdWithPublicAccess = async (req, res) => {
-    try {
-        const resume = await Resume.findById(req.user._id);
-        if (!resume) return res.status(404).json({ message: "Resume not found" });
+  try {
+    const resume = await Resume.findById(req.params.id);
 
-        res.json(resume);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Server error" });
+    if (!resume) {
+      return res.status(404).json({ message: "Resume not found" });
     }
+
+    res.status(200).json(resume);
+  } catch (error) {
+    console.error("Error fetching public resume:", error);
+    res.status(500).json({ message: "Server error" });
+  }
 };
 
 
