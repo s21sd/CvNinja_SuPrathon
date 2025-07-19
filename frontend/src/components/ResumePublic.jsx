@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
 import RenderResume from "../components/RenderResume";
 import { API_PATHS } from '../utils/apiPaths';
+
 export default function PublicResume() {
     const { id } = useParams();
     const [resume, setResume] = useState(null);

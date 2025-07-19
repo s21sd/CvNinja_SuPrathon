@@ -106,6 +106,19 @@ export const getResumeById = async (req, res) => {
     }
 };
 
+export const getResumeByIdWithPublicAccess = async (req, res) => {
+    try {
+        const resume = await Resume.findOne({ _id: req.params.id });
+
+        if (!resume) {
+            return res.status(404).json({ message: 'Resume not found' });
+        }
+        res.json(resume);
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to get resume', error: error.message });
+    }
+};
+
 export const updateResume = async (req, res) => {
     try {
         const resume = await Resume.findOne({
