@@ -9,17 +9,23 @@ export default function PublicResume() {
     const [resume, setResume] = useState(null);
 
     useEffect(() => {
-        axiosInstance
-            .get(API_PATHS.RESUME.GET_PUBLIC(id))
-            .then((res) => setResume(res.data))
-            .catch(() => setResume(null));
+        if (id) {
+            axiosInstance
+                .get(API_PATHS.RESUME.GET_PUBLIC(id))
+                .then((res) => setResume(res.data))
+                .catch(() => setResume(null));
+        }
     }, [id]);
 
-    if (!resume) return <div className="text-center mt-10">Loading or not found...</div>;
+    if (!resume) return (
+        <div className="min-h-screen flex items-center justify-center text-gray-600">
+            Loading or resume not found...
+        </div>
+    );
 
     return (
-        <div className="bg-white min-h-screen p-4 flex justify-center">
-            <div className="w-[800px]">
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+            <div className="w-full max-w-[900px] h-[calc(100vh-4rem)] overflow-y-auto bg-white shadow-xl rounded-2xl border border-gray-300 p-6">
                 <RenderResume
                     templateId={resume.template?.theme || "modern"}
                     resumeData={resume}
