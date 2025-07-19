@@ -12,9 +12,9 @@ import { uploadResumeImages } from "../controllers/uploadImages.js";
 
 const router = express.Router();
 
+router.get("/public/:id", getResumeByIdWithPublicAccess);
 router.post("/", protect, createResume);
 router.get("/", protect, getUserResumes);
-router.get("/public/:id", getResumeByIdWithPublicAccess);
 router.get("/:id", protect, getResumeById);
 router.put("/:id", protect, updateResume);
 router.put("/:id/upload-images", protect, uploadResumeImages);
