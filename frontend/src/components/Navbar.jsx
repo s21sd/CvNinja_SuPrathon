@@ -3,7 +3,7 @@ import { ProfileInfoCard } from "./Cards";
 import logo from "../../public/cvninja.png";
 const Navbar = () => {
   return (
-    <div className="h-16 bg-white/80 backdrop-blur-xl border-b border-amber-100/50 py-2.5 px-4 md:px-0 sticky top-0 z-50">
+    <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-amber-100/50 py-3 px-4 md:px-8">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-5">
 
         <Link to="/" className="flex items-center gap-3">
